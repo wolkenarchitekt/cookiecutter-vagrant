@@ -1,4 +1,5 @@
 {
   "dir_name": ".",
-  "box": "debian/bullseye64"
+  "box": "debian/bullseye64",
+  "vb_name": ""
 }
