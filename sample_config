@@ -1,0 +1,3 @@
+default_context:
+    box: debian/bullseye64
+    dir_name: example
