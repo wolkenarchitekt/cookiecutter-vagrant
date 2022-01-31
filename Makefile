@@ -8,4 +8,6 @@ clean:
 
 test:
 	$(MAKE) build
-	cd example && $(MAKE) vagrant-recreate ansible-provision
+	cd example && \
+		$(MAKE) vagrant-recreate ansible-provision && \
+		vagrant destroy -f
