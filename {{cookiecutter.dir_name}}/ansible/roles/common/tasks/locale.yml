@@ -1,0 +1,17 @@
+- name: Install locales
+  apt: pkg=locales
+
+- name: Set locale
+  lineinfile:
+    dest: /etc/locale.gen
+    line: 'en_US.UTF-8 UTF-8'
+  register: locale
+
+- name: Run locale-gen
+  script: /usr/sbin/locale-gen en_US.UTF-8
+  when: locale.changed
+  register: localegen
+
+- name: Update locale
+  script: /usr/sbin/update-locale en_US.UTF-8
+  when: localegen.changed

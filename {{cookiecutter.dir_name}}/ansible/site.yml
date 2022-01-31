@@ -1,7 +1,4 @@
 - hosts: vagrant
-  connection: local
-
-  tasks:
-    - name: Install nginx
-      apt:
-        pkg: nginx
+  roles:
+    - role: common
+      become: yes

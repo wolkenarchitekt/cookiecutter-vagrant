@@ -1,5 +1,9 @@
 {
   "dir_name": ".",
   "box": "debian/bullseye64",
-  "vb_name": ""
+  "vb_name": "",
+  "python_version": "3.9.5",
+  "_copy_without_render": [
+    "*.yml"
+  ]
 }
