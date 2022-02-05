@@ -14,4 +14,5 @@ ansible-provision: $(VENV)
 
 vagrant-recreate:
 	vagrant destroy -f
+	sleep 5
 	vagrant up

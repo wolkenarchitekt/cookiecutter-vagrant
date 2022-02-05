@@ -4,6 +4,17 @@ Vagrant.configure(2) do |config|
   config.vm.box = "{{ cookiecutter.box }}"
   config.env.enable # Enable vagrant-env plugin
 
+  # Add your network adapter as NETWORK_BRIDGE_ADAPTER to .env to enable bridged networking
+  NETWORK_BRIDGE_ADAPTER = ENV["NETWORK_BRIDGE_ADAPTER"]
+  if !NETWORK_BRIDGE_ADAPTER.nil?
+    config.vm.network "public_network", bridge: NETWORK_BRIDGE_ADAPTER
+  end
+
+  SSH_HOST_PORT = ENV["SSH_HOST_PORT"]
+  if !NETWORK_BRIDGE_ADAPTER.nil?
+    config.vm.network "forwarded_port", id: "ssh", host: SSH_HOST_PORT, guest: 22
+  end
+
   config.vm.provider 'virtualbox' do |vb|
     vb.name = "{{ cookiecutter.vb_name }}"
     vb.memory = ENV["VB_MEMORY"] || 2048
