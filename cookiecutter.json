@@ -1,5 +1,7 @@
 {
   "dir_name": ".",
   "box": "debian/bullseye64",
-  "vb_name": ""
+  "vb_name": "",
+  "vb_memory": 2048,
+  "vb_cpus": 2
 }

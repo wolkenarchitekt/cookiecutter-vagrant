@@ -5,3 +5,10 @@ build:  ## Create example from cookiecutter template
 
 clean:
 	rm -rf example/
+
+test:
+	$(MAKE) build
+	cd example && \
+		$(MAKE) vagrant-recreate && \
+		sleep 5 && \
+		vagrant destroy -f

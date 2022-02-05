@@ -17,6 +17,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provider 'virtualbox' do |vb|
     vb.name = "{{ cookiecutter.vb_name }}"
+    vb.memory = ENV["VB_MEMORY"] || 2048
+    vb.cpus = ENV["VB_CPUS"] || 2
   end
-
 end
