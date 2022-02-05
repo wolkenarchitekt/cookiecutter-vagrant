@@ -10,4 +10,5 @@ test:
 	$(MAKE) build
 	cd example && \
 		$(MAKE) vagrant-recreate ansible-provision && \
+		sleep 5 && \
 		vagrant destroy -f
