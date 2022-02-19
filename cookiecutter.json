@@ -4,8 +4,9 @@
   "vb_name": "",
   "vb_memory": 2048,
   "vb_cpus": 2,
+  "ssh_host_port": 2222,
   "python_version": "3.9.5",
   "_copy_without_render": [
-    "*.yml"
+    "ansible/roles/*"
   ]
 }
